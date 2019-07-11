@@ -1,0 +1,23 @@
+<a class="btn previous" ng-click="$goTo('/')">
+    <b>‹</b> Retour</a>
+<h2>Liste des articles</h2>
+<table ng-show="items.length">
+    <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th>Actions</th>
+    </tr>
+    <tr ng-repeat="items in items">
+        <td>
+            {{item.title}}
+        </td>
+        <td>
+            {{item.price}}
+        </td>
+        <td>
+            <a class="icon-trash clickable" ng-click="removeitem(item._id)"></a>
+            <a class="icon-pencil clickable" ng-click="$goTo('/edit-item/'+item._id)"></a>
+        </td>
+    </tr>
+</table>
+<p ng-hide="items.length">Aucun événement n'a été ajouté.</p>
