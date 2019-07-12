@@ -147,13 +147,6 @@ tr:nth-child(even) {
     background-color: #f2f2f2
 }
 
-tr.old-event {
-    background-color: #424242;
-    color: #FAFAFA;
-    border: solid;
-    border-width: 1px 0;
-}
-
 tr:nth-child(2) {
     border-top: none;
 }
@@ -330,10 +323,9 @@ td a {
 }
 
 .icon-pencil:before { content: '\e800'; }
-.icon-share:before { content: '\e801'; }
-.icon-users:before { content: '\e802'; }
 .icon-trash:before { content: '\e803'; } 
 .icon-power:before { content: '\e806'; }
+.icon-upload:before { content: '\e807'; }
 
 pre {
 	width: 100%;

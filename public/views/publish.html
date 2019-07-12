@@ -1,15 +1,21 @@
 <a class="btn previous" ng-click="$goTo(lpath)"><b>‹</b> Retour</a>
-<h2 ng-hide="edit">Publier un nouvel événement</h2>
-<h2 ng-show="edit">Édition d'un événement</h2>
+<h2 ng-hide="edit">Publier un nouvel article</h2>
+<h2 ng-show="edit">Édition d'un article</h2>
 <form name="formPub">
     <h4>Titre</h4>
+    <p ng-show="edit">Il est impossible de modifier une illustration: pour cela il faut supprimer et créer un nouvel article.</p>
     <input type="text" ng-model="item.title" ng-keyup="invalidForm()">
     <h4>Description</h4>
     <textarea ui-tinymce="tinymceOptions" ng-model="item.description" ng-keyup="invalidForm()"></textarea>
-    <hr>
     <h4>Prix</h4>
     <input type="number" step="0.01" ng-model="item.price" ng-change="invalidForm()">
-    <input type="submit" class="btn btn-submit" value="Valider"
-        ng-class="{'btn-disabled': invalid}"
+    <div class="group-upload" ng-hide="edit">
+        <label for="content">Fichier png:</label>
+        <span ngf-select ng-model="content" id="content" name="content" class="icon-upload" required
+            ngf-pattern="'.png'"></span>
+        <span ng-show="content" class="file-selected">Fichier sélectionné</span>
+    </div>
+    <input type="submit" class="btn btn-submit" value="Valider" ng-class="{'btn-disabled': invalid}"
         ng-disabled="invalid" ng-hide="progress" ng-click="publish()">
+    <p ng-show="progress && !edit" class="progress-percentage">Progression: {{progress}} %</p>
 </form>

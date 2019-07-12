@@ -1,4 +1,4 @@
-module.exports = ['$scope', '$http', '$rootScope', 'notie', '$location', function ($scope, $http, $rootScope, notie, $location) {
+module.exports = ['$scope', 'Upload', 'notie', '$location', function ($scope, Upload, notie, $location) {
     $scope.tinymceOptions = {
         inline: false,
         skin: 'lightgray',
@@ -24,15 +24,20 @@ module.exports = ['$scope', '$http', '$rootScope', 'notie', '$location', functio
     };
 
     $scope.publish = function () {
-        // TODO: add upload file
-        $scope.progress = true
-        $http.post('/api/items/', $scope.item).success(function (data) {
-            notie.alert(1, 'L\'article a été ajouté.', 3);
+        $scope.progress = true;
+        var obj = $scope.item;
+        obj.file = $scope.content;
+        Upload.upload({
+            url: '/api/items/',
+            data: obj
+        }).then(function () {
+            notie.alert(1, 'Le fichier a été sauvegardé.', 3);
+            $location.path('/');
+        }, function () {
             $scope.progress = false;
-            $location.path('/edit-item/' + data._id);
-        }).error(function () {
-            $rootScope.$error();
-            $scope.progress = false;
+            notie.alert(3, 'Une erreur a eu lieu lors de l\'envoie du fichier.', 3);
+        }, function (evt) {
+            $scope.progress = parseInt(100.0 * evt.loaded / evt.total);
         });
     };
 }];

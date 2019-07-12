@@ -35,8 +35,8 @@ module.exports = ['$scope', '$http', '$rootScope', 'notie', '$routeParams', '$lo
 
     $scope.publish = function () {
         $scope.progress = true
-        $http.post('/api/items/', $scope.item).success(function (data) {
-            notie.alert(1, 'L\'article a été ajouté.', 3);
+        $http.put('/api/items/' + $scope.item._id, $scope.item).success(function (data) {
+            notie.alert(1, 'L\'article a été modifié.', 3);
             $scope.progress = false;
             $location.path('/edit-item/' + data._id);
         }).error(function () {

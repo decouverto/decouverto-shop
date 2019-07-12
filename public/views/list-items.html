@@ -7,7 +7,7 @@
         <th>Prix</th>
         <th>Actions</th>
     </tr>
-    <tr ng-repeat="items in items">
+    <tr ng-repeat="item in items">
         <td>
             {{item.title}}
         </td>
@@ -15,9 +15,9 @@
             {{item.price}}
         </td>
         <td>
-            <a class="icon-trash clickable" ng-click="removeitem(item._id)"></a>
+            <a class="icon-trash clickable" ng-click="removeItem(item._id)"></a>
             <a class="icon-pencil clickable" ng-click="$goTo('/edit-item/'+item._id)"></a>
         </td>
     </tr>
 </table>
-<p ng-hide="items.length">Aucun événement n'a été ajouté.</p>
+<p ng-hide="items.length">Aucun article n'a été ajouté.</p>

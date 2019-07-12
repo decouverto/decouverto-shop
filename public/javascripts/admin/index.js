@@ -3,11 +3,9 @@ require('angular-route');
 require('ng-notie');
 require('./tinymce/tinymce.min.js');
 require('./tinymce/ui-tinymce.js');
+require('ng-file-upload');
 
-
-// TODO: add upload file
-
-var app = angular.module('Decouverto', ['ngNotie', 'ngRoute', 'ui.tinymce']);
+var app = angular.module('Decouverto', ['ngNotie',  'ngFileUpload', 'ngRoute', 'ui.tinymce']);
 app.config(['$routeProvider', function($routeProvider) {
         // Route configuration
         $routeProvider
@@ -21,7 +19,7 @@ app.config(['$routeProvider', function($routeProvider) {
         })
         .when('/list-items/', {
             templateUrl: '/views/list-items.html',
-            controller: 'ListItemCtrl'
+            controller: 'ListItemsCtrl'
         })
         .when('/edit-item/:id', {
             templateUrl: '/views/publish.html',
