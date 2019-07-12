@@ -26,20 +26,22 @@
         <h1>Découverto</h1><a href="https://decouverto.fr/">Accueil</a>
     </header>
     <section class="content">
-        <h2>Boutique</h2>
-        <p>Vous retrouverez ici tout les articles qui sont en vente avant et après les <a href="https://calendrier.decouverto.fr/">événements</a> (randonnées, conférences...) auprès des organisateurs. Les revenus dégagés de la vente de ces articles assureront la pérénité de l'association.</p>
+        <h2>La Boutique Découverto</h2>
+        <p class="info">Vous retrouverez ici tout les articles qui sont en vente avant et après les <a href="https://calendrier.decouverto.fr/">événements</a> (randonnées, conférences...) auprès des organisateurs. Les revenus dégagés de la vente de ces articles assureront la pérénité de l'association.</p>
+        <p class="info">Les livres sont disponible dans les <a href="https://decouverto.fr/livres/">points de ventes</a>.</p>
         <%if (items.length == 0) { %>
             <p>Aucun article disponible.</p>
         <% } else { %>
             <% for(var i=0; i<items.length; i++) {%>
-                    <div class="card items" id="<%= items[i].id %>">
-                        <h4 class="title"><%= items[i].title %></h4>
+                    <div class="card">
+                        <h4><%= items[i].title %></h4>
+                        <p class="price"><%= items[i].price %>€</p>
+                        <img class="image-shop" src="/images/<%= items[i].filename %>" alt="Aperçu de l'article: <%= items[i].title %>">
                         <div class="description"><%- items[i].description %></div>
                     </div>
             <% } %>
         <% } %>
     </section>
-
     <%- include('includes/footer'); %>
 </body>
 </html>

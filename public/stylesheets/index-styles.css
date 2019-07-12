@@ -286,7 +286,25 @@ a {
     color: #fff
 }
 
+.info {
+    margin: 10px;
+}
 
+.price {
+    font-weight: 550;
+    font-style: italic;
+    margin: 5px;
+}
+
+.image-shop {
+    max-width: 25%;
+}
+
+@media (max-width: 600px) {
+    .image-shop {
+        max-width: 50%;
+    }   
+}
 @media (max-width: 450px) {
     header {
         padding: 1.5rem;
@@ -300,5 +318,7 @@ a {
     .card h4 {
         font-size: 1.6rem;
     }
+    .image-shop {
+        max-width: 75%;
+    }   
 }
-

@@ -2,13 +2,15 @@
 <h2 ng-hide="edit">Publier un nouvel article</h2>
 <h2 ng-show="edit">Édition d'un article</h2>
 <form name="formPub">
-    <h4>Titre</h4>
     <p ng-show="edit">Il est impossible de modifier une illustration: pour cela il faut supprimer et créer un nouvel article.</p>
+    <h4>Titre</h4>
     <input type="text" ng-model="item.title" ng-keyup="invalidForm()">
     <h4>Description</h4>
     <textarea ui-tinymce="tinymceOptions" ng-model="item.description" ng-keyup="invalidForm()"></textarea>
     <h4>Prix</h4>
     <input type="number" step="0.01" ng-model="item.price" ng-change="invalidForm()">
+    <h4 ng-hide="edit">Image</h4>
+    <p ng-hide="edit">Préferer des images <b>carrés</b> et <b>petites</b> (1000px max par côté) pour un chargement efficace. L'image à fournir est au format <b>png</b>: penser à utiliser un <b>arrière plan transparant</b>.</p>
     <div class="group-upload" ng-hide="edit">
         <label for="content">Fichier png:</label>
         <span ngf-select ng-model="content" id="content" name="content" class="icon-upload" required
