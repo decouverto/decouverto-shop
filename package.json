@@ -1,7 +1,7 @@
 {
   "name": "decouverto-shop",
   "version": "0.0.0",
-  "description": "The website of Découverto shop: events und registrations.",
+  "description": "The website of the Découverto shop",
   "main": "app.js",
   "repository": {
     "type": "git",
