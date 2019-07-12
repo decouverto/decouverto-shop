@@ -17,6 +17,7 @@ body {
 }
 
 
+
 header {
     flex-shrink: 0;
     overflow: hidden;
@@ -24,28 +25,49 @@ header {
     background-color: #dc3133;
     background-repeat: no-repeat;
     color: #fff;
-    padding: 1rem;
-    line-height: 66px;
+    padding: 0;
 }
 
 header h1 {
     margin: 0;
     padding-left: 10px;
-    font-size: 2.2em;
-    display: inline-block;
+    font-size: 2em;
 }
 
-header a {
-    float: right;
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: bold;
-    display: inline-block;
-    padding: 0 10px;
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    top: 0;
+    width: 100%;
+    z-index: 1000
 }
 
-header a:hover {
-    color: #a52222;
+ul.nav li {
+    float: left;
+}
+
+ul.nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+ul.nav li a:hover:not(.active) {
+    background-color: #111;
+}
+
+ul.nav .active {
+    background-color: #dc3133;
+}
+
+header h1 {
+    margin:1rem;
 }
 
 section,
@@ -311,9 +333,6 @@ a {
     }
     header h1 {
         font-size: 1.2em;
-    }
-    header a {
-        font-size: 1.1em;
     }
     .card h4 {
         font-size: 1.6rem;
