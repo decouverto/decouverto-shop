@@ -16,8 +16,6 @@ body {
     box-sizing: border-box;
 }
 
-
-
 header {
     flex-shrink: 0;
     overflow: hidden;
@@ -240,27 +238,6 @@ a {
     padding-bottom: 15px
 }
 
-.input-group {
-    margin: 10px;
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    margin-right: 5px;
-}
-
-.input-group input  {
-    background-color: inherit;
-    border-style: solid;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-size: inherit;
-    border-color: #2e7d32;
-    max-width: 75%;
-    margin-left: 5px;
-    outline: none;
-}
 
 
 @media (max-width: 600px) {
@@ -328,9 +305,6 @@ a {
     }   
 }
 @media (max-width: 450px) {
-    header {
-        padding: 1.5rem;
-    }
     header h1 {
         font-size: 1.2em;
     }
