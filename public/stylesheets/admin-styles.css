@@ -319,3 +319,8 @@ td a {
 .icon-trash:before { content: '\e803'; } 
 .icon-power:before { content: '\e806'; }
 .icon-upload:before { content: '\e807'; }
+
+
+.img-preview {
+    max-width: 25%;
+}

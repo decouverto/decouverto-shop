@@ -3,6 +3,7 @@
 <h2 ng-show="edit">Édition d'un article</h2>
 <form name="formPub">
     <p ng-show="edit">Il est impossible de modifier une illustration: pour cela il faut supprimer et créer un nouvel article.</p>
+    <img ng-show="edit" ng-src="/images/{{ item.filename }}" alt="Aperçu" class="img-preview">
     <h4>Titre</h4>
     <input type="text" ng-model="item.title" ng-keyup="invalidForm()">
     <h4>Description</h4>
