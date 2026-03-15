@@ -22,16 +22,23 @@
     <meta name="og:type" content="website">
 </head>
 <body>
-    <header>
-        <ul class="nav">
+    <nav class="nav">
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+            <span class="hamburger"></span>
+        </button>
+        <ul class="nav-menu">
             <li><a href="https://decouverto.fr">Accueil</a></li>
             <li><a href="https://calendrier.decouverto.fr">Calendrier</a></li>
             <li><a href="https://decouverto.fr/livres">Livres</a></li>
             <li><a href="https://app.decouverto.fr" target="_blank">Application</a></li>
             <li><a href="https://podcast.decouverto.fr">Podcasts</a></li>
+            <li><a href="https://decouverto.fr/rando">Randonnées</a></li>
+            <li><a href="https://decouverto.fr/chansons/">Chansons</a></li>
+            <li><a href="//documents.decouverto.fr/">Documents</a></li>
             <li><a href="#" class="active">Boutique</a></li>
-	    <li><a href="https://decouverto.fr/rando">Randonnées</a></li>
         </ul>
+    </nav>
+    <header class="nav-container">
         <h1>Découverto</h1>
     </header>
     <section class="content">
@@ -52,5 +59,6 @@
         <% } %>
     </section>
     <%- include('includes/footer'); %>
+    <script type="text/javascript" src="/javascripts/nav.js"></script>
 </body>
 </html>

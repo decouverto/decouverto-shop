@@ -11,7 +11,13 @@
   "scripts": {
     "start": "node bin/decouverto-shop",
     "code": "nodemon  --ignore public/ --ignore node_modules/ --ignore build/ -e js bin/decouverto-shop  & gulp serve",
-    "build": "gulp"
+    "code-client": "npm start & gulp serve",
+    "build": "gulp",
+    "preinstall": "npx npm-force-resolutions",
+    "postinstall": "node -e \"var fs=require('fs'),path=require('path');if(fs.existsSync('node_modules/vinyl-fs/node_modules/graceful-fs')){fs.rmSync('node_modules/vinyl-fs/node_modules/graceful-fs',{recursive:true,force:true});fs.cpSync('node_modules/graceful-fs','node_modules/vinyl-fs/node_modules/graceful-fs',{recursive:true});}\""
+  },
+  "resolutions": {
+    "graceful-fs": "4.2.11"
   },
   "author": "Cédric JUNG <cedced19@gmail.com>",
   "license": "MIT",
@@ -53,17 +59,19 @@
   "devDependencies": {
     "browser-sync": "^2.24.6",
     "browserify": "^13.3.0",
+    "graceful-fs": "^4.2.11",
     "gulp": "^3.9.1",
-    "gulp-htmlmin": "^5.0.1",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-cli": "^2.0.1",
     "gulp-csso": "^3.0.1",
+    "gulp-htmlmin": "^5.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-uglify": "^3.0.1",
     "gulplog": "^1.0.0",
     "nodemon": "^1.17.1",
-    "through": "^2.3.8",
+    "npm-force-resolutions": "^0.0.10",
     "rimraf": "^2.6.2",
+    "through": "^2.3.8",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
   }
